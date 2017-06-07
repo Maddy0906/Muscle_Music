@@ -1,0 +1,214 @@
+{
+  "href": "https://api.spotify.com/v1/users/21vwg7tdxsk7dtmyslgh4qqhy/playlists/5eV6vRrrgempaVXnw1JDEo/tracks?offset=0&limit=100",
+  "items": [
+    {
+      "added_at": "2017-06-03T09:45:45Z",
+      "added_by": {
+        "external_urls": {
+          "spotify": "http://open.spotify.com/user/21vwg7tdxsk7dtmyslgh4qqhy"
+        },
+        "href": "https://api.spotify.com/v1/users/21vwg7tdxsk7dtmyslgh4qqhy",
+        "id": "21vwg7tdxsk7dtmyslgh4qqhy",
+        "type": "user",
+        "uri": "spotify:user:21vwg7tdxsk7dtmyslgh4qqhy"
+      },
+      "is_local": false,
+      "track": {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1N3288tnOcOQQgfhpBqFsX"
+              },
+              "href": "https://api.spotify.com/v1/artists/1N3288tnOcOQQgfhpBqFsX",
+              "id": "1N3288tnOcOQQgfhpBqFsX",
+              "name": "Holly Cole",
+              "type": "artist",
+              "uri": "spotify:artist:1N3288tnOcOQQgfhpBqFsX"
+            }
+          ],
+          "available_markets": [
+            "AD",
+            "AR",
+            "AT",
+            "AU",
+            "BE",
+            "BG",
+            "BO",
+            "BR",
+            "CH",
+            "CL",
+            "CO",
+            "CR",
+            "CY",
+            "CZ",
+            "DE",
+            "DK",
+            "DO",
+            "EC",
+            "EE",
+            "ES",
+            "FI",
+            "FR",
+            "GB",
+            "GR",
+            "GT",
+            "HK",
+            "HN",
+            "HU",
+            "ID",
+            "IE",
+            "IS",
+            "IT",
+            "JP",
+            "LI",
+            "LT",
+            "LU",
+            "LV",
+            "MC",
+            "MT",
+            "MX",
+            "MY",
+            "NI",
+            "NL",
+            "NO",
+            "NZ",
+            "PA",
+            "PE",
+            "PH",
+            "PL",
+            "PT",
+            "PY",
+            "SE",
+            "SG",
+            "SK",
+            "SV",
+            "TR",
+            "TW",
+            "UY"
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/5WlF9SlJrMAYpju3TQ12vb"
+          },
+          "href": "https://api.spotify.com/v1/albums/5WlF9SlJrMAYpju3TQ12vb",
+          "id": "5WlF9SlJrMAYpju3TQ12vb",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/d2453bee9458cd78506296f7d6fdb47112d45ec2",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/eb57ab3b0d6d730c2d3943b74d6dd1e70692fdb1",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/3feab490e51e5be8450caf047e4052840a3c974c",
+              "width": 64
+            }
+          ],
+          "name": "Temptation",
+          "type": "album",
+          "uri": "spotify:album:5WlF9SlJrMAYpju3TQ12vb"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1N3288tnOcOQQgfhpBqFsX"
+            },
+            "href": "https://api.spotify.com/v1/artists/1N3288tnOcOQQgfhpBqFsX",
+            "id": "1N3288tnOcOQQgfhpBqFsX",
+            "name": "Holly Cole",
+            "type": "artist",
+            "uri": "spotify:artist:1N3288tnOcOQQgfhpBqFsX"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AR",
+          "AT",
+          "AU",
+          "BE",
+          "BG",
+          "BO",
+          "BR",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "EC",
+          "EE",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IS",
+          "IT",
+          "JP",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PT",
+          "PY",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TR",
+          "TW",
+          "UY"
+        ],
+        "disc_number": 1,
+        "duration_ms": 206640,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USBN29500311"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/2CpETKcs2iOHIG0bj0bApJ"
+        },
+        "href": "https://api.spotify.com/v1/tracks/2CpETKcs2iOHIG0bj0bApJ",
+        "id": "2CpETKcs2iOHIG0bj0bApJ",
+        "name": "Train Song",
+        "popularity": 24,
+        "preview_url": "https://p.scdn.co/mp3-preview/df4b35430e1e07c664172ec91d799b78824b22a6?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:2CpETKcs2iOHIG0bj0bApJ"
+      }
+    }
+  ],
+  "limit": 100,
+  "next": null,
+  "offset": 0,
+  "previous": null,
+  "total": 1
+}
