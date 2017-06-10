@@ -1,13 +1,15 @@
 package com.example.madoka.spotify_tutorial;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.spotify.sdk.android.authentication.AuthenticationClient;
 import com.spotify.sdk.android.authentication.AuthenticationRequest;
@@ -20,16 +22,62 @@ import com.spotify.sdk.android.player.PlayerEvent;
 import com.spotify.sdk.android.player.Spotify;
 import com.spotify.sdk.android.player.SpotifyPlayer;
 
-import kaaes.spotify.webapi.android.SpotifyApi;
-import kaaes.spotify.webapi.android.SpotifyService;
-import kaaes.spotify.webapi.android.models.Album;
-import kaaes.spotify.webapi.android.models.PlaylistTrack;
-import kaaes.spotify.webapi.android.models.Tracks;
-import retrofit.Callback;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
+import static com.example.madoka.spotify_tutorial.App.accessToken;
+import static com.example.madoka.spotify_tutorial.App.initSpotify;
 
-import static com.spotify.sdk.android.authentication.LoginActivity.REQUEST_CODE;
+
+//public class MainActivity extends AppCompatActivity {
+//
+//    private Button connect;
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//
+//        setTitle("Sortify");
+//
+//        System.out.println("Access token: " + accessToken);
+//
+//        if (!accessToken.equals("")) {
+//            startApplication();
+//        }
+//
+//        connect = (Button) findViewById(R.id.connectToSpotify);
+//        connect.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                startAuthentication();
+//            }
+//        });
+//    }
+//
+//
+//    void startAuthentication() {
+//        Intent intent = new Intent(this, AuthenticateActivity.class);
+//        startActivityForResult(intent, 1);
+//    }
+//
+//    void startApplication() {
+//        initSpotify();
+//
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+//    }
+//
+//
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        // Check which request we're responding to
+//        if (requestCode == 1) {
+//            // Make sure the request was successful
+//            if (resultCode == RESULT_OK) {
+//                startApplication();
+//            }
+//        }
+//    }
+//}
+
+
 
 public class MainActivity extends Activity implements
         SpotifyPlayer.NotificationCallback, ConnectionStateCallback {
@@ -39,7 +87,7 @@ public class MainActivity extends Activity implements
     //my redirect URI
     private static final String REDIRECT_URI = "http://mysite.com/callback/";
 
-    private Player mPlayer;
+    private ImageButton mStartButton;
 
 
 // Request code that will be used to verify if the result comes from correct activity
@@ -58,40 +106,17 @@ public class MainActivity extends Activity implements
 
             AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
 
-            /**
-             * Usage
-             */
-            SpotifyApi api = new SpotifyApi();
 
-             // Most (but not all) of the Spotify Web API endpoints require authorisation.
-             // If you know you'll only use the ones that don't require authorisation you can skip this step
-            api.setAccessToken("myAccessToken");
-
-            SpotifyService spotify = api.getService();
-
-            spotify.getAlbum("2dIGnmEIy1WZIcZCFSj6i8", new Callback<Album>() {
+            //set a button to start
+            mStartButton = (ImageButton) findViewById(R.id.start_button);
+            mStartButton.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void success(Album album, Response response) {
-                    Log.d("Album success", album.name);
-                }
-
-                @Override
-                public void failure(RetrofitError error) {
-                    Log.d("Album failure", error.toString());
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplication(), MusicController.class);
+                    startActivity(intent);
                 }
             });
-
-            /**
-             * Usage until here
-             */
         }
-
-    /** Called when the user clicks the Start button */
-    public void sendMessage(View view) {
-
-    }
-
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -102,19 +127,7 @@ public class MainActivity extends Activity implements
             AuthenticationResponse response = AuthenticationClient.getResponse(resultCode, intent);
             if (response.getType() == AuthenticationResponse.Type.TOKEN) {
                 Config playerConfig = new Config(this, response.getAccessToken(), CLIENT_ID);
-                Spotify.getPlayer(playerConfig, this, new SpotifyPlayer.InitializationObserver() {
-                    @Override
-                    public void onInitialized(SpotifyPlayer spotifyPlayer) {
-                        mPlayer = spotifyPlayer;
-                        mPlayer.addConnectionStateCallback(MainActivity.this);
-                        mPlayer.addNotificationCallback(MainActivity.this);
-                    }
 
-                    @Override
-                    public void onError(Throwable throwable) {
-                        Log.e("MainActivity", "Could not initialize player: " + throwable.getMessage());
-                    }
-                });
             }
         }
     }
@@ -144,7 +157,6 @@ public class MainActivity extends Activity implements
     @Override
     public void onLoggedIn() {
         Log.d("MainActivity", "User logged in");
-        mPlayer.playUri(null, "spotify:track:2TpxZ7JUBn3uw46aR7qd6V", 0, 0);
     }
 
     @Override
