@@ -116,6 +116,7 @@ public class MusicController extends AppCompatActivity implements
     }
 
     public void onPauseButtonClicked(View view) {
+        Log.d("MusicControllerActivity", "pause");
         if (mCurrentPlaybackState != null && mCurrentPlaybackState.isPlaying) {
             mPlayer.pause(mOperationCallback);
         } else {
@@ -141,7 +142,7 @@ public class MusicController extends AppCompatActivity implements
 
     @Override
     public void onPlaybackEvent(PlayerEvent playerEvent){
-        Log.d("MainActivity","playback error received:" + playerEvent.name());
+        Log.d("ControllerActivity","playback error received:" + playerEvent.name());
         //add current
         mCurrentPlaybackState = mPlayer.getPlaybackState();
         switch (playerEvent){
