@@ -22,9 +22,6 @@ import com.spotify.sdk.android.player.PlayerEvent;
 import com.spotify.sdk.android.player.Spotify;
 import com.spotify.sdk.android.player.SpotifyPlayer;
 
-import static com.example.madoka.spotify_tutorial.App.accessToken;
-import static com.example.madoka.spotify_tutorial.App.initSpotify;
-
 
 //public class MainActivity extends AppCompatActivity {
 //
