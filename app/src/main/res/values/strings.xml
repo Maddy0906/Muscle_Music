@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Spotify_tutorial</string>
+    <string name="app_name">Muscle Music</string>
     <!--playbutton-->
     <string name="play_playlist_button_label">Playlist</string>
     <string name="pause_button_label_toggle">Pause/Resume</string>
