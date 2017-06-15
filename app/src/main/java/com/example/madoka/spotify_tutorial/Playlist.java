@@ -1,10 +1,10 @@
 package com.example.madoka.spotify_tutorial;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -33,6 +33,9 @@ public class Playlist extends AppCompatActivity implements RecyclerViewAdapter.I
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, arrayList, this);
         recyclerView.setAdapter(adapter);
 
+        //Animation
+
+
 
         /**
          AutoFitGridLayoutManager that auto fits the cells by the column width defined.
@@ -47,11 +50,15 @@ public class Playlist extends AppCompatActivity implements RecyclerViewAdapter.I
          **/
         GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
+
     }
 
     @Override
     public void onItemClick(DataModel item) {
+        Intent intet = new Intent(Playlist.this, MusicController.class);
+        startActivity(intet);
 
-        Toast.makeText(getApplicationContext(), item.text + " is clicked", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), item.text + " is clicked", Toast.LENGTH_SHORT).show();
     }
+
 }

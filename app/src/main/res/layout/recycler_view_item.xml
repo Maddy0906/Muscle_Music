@@ -12,19 +12,25 @@
         card_view:cardCornerRadius="0dp"
         card_view:cardElevation="@dimen/margin10"
         card_view:cardMaxElevation="@dimen/margin10"
-        card_view:contentPadding="@dimen/margin10">
+        card_view:contentPadding="@dimen/margin10"
+        card_view:cardBackgroundColor="#df163d">
+        <!--card_view:cardBackgroundColor="@drawable/background_color"-->
+
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="wrap_content"
+            android:background="@drawable/background_color"
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:orientation="vertical">
+
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:layout_centerInParent="true"
                 android:padding="0dp" />
 
