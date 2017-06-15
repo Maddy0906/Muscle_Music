@@ -55,7 +55,7 @@ public class MainActivity extends Activity implements
             mStartButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getApplication(), MusicController.class);
+                    Intent intent = new Intent(getApplication(), Playlist.class);
                     startActivity(intent);
                 }
             });
