@@ -259,7 +259,7 @@ public class MusicController extends AppCompatActivity implements
     public void onPlaybackEvent(PlayerEvent playerEvent){
         mMetadata = mPlayer.getMetadata();
         // Trigger UI refresh
-        updateView();
+//        updateView();
         Log.d("ControllerActivity","playback error received:" + playerEvent.name());
         //add current
         mCurrentPlaybackState = mPlayer.getPlaybackState();
