@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 
 import com.spotify.sdk.android.authentication.AuthenticationClient;
 import com.spotify.sdk.android.authentication.AuthenticationRequest;
@@ -59,10 +62,56 @@ public class MusicController extends AppCompatActivity implements
 // Can be any integer
     private static final int REQUEST_CODE = 1337;
 
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_controller);
+
+        //Animation play button
+        Animation anim_alpha = AnimationUtils.loadAnimation(this,R.anim.anim_alpha);
+        ImageButton btnAlpha = (ImageButton)findViewById(R.id.play_playlist_button);
+        final Animation finalAnim_alpha1 = anim_alpha;
+        btnAlpha.setOnClickListener(new ImageButton.OnClickListener(){
+
+            @Override
+            public void onClick(View arg0) {
+                arg0.startAnimation(finalAnim_alpha1);
+            }});
+
+        //Animation previous button
+        anim_alpha = AnimationUtils.loadAnimation(this, R.anim.anim_alpha);
+        btnAlpha = (ImageButton) findViewById(R.id.skip_prev_button);
+        Animation finalAnim_alpha = anim_alpha;
+        final Animation finalAnim_alpha3 = finalAnim_alpha;
+        btnAlpha.setOnClickListener(new ImageButton.OnClickListener(){
+
+            @Override
+            public void onClick(View arg0) {
+                arg0.startAnimation(finalAnim_alpha3);
+            }});
+
+        //Animation pause button
+        anim_alpha = AnimationUtils.loadAnimation(this, R.anim.anim_alpha);
+        btnAlpha = (ImageButton) findViewById(R.id.pause_button);
+        finalAnim_alpha = anim_alpha;
+        final Animation finalAnim_alpha2 = finalAnim_alpha;
+        btnAlpha.setOnClickListener(new ImageButton.OnClickListener(){
+
+            @Override
+            public void onClick(View arg0) {
+                arg0.startAnimation(finalAnim_alpha2);
+            }});
+
+        //Animation next button
+        anim_alpha = AnimationUtils.loadAnimation(this, R.anim.anim_alpha);
+        btnAlpha = (ImageButton) findViewById(R.id.skip_next_button);
+        finalAnim_alpha = anim_alpha;
+        final Animation finalAnim_alpha4 = finalAnim_alpha;
+        btnAlpha.setOnClickListener(new ImageButton.OnClickListener(){
+
+            @Override
+            public void onClick(View arg0) {
+                arg0.startAnimation(finalAnim_alpha4);
+            }});
 
         AuthenticationRequest.Builder builder = new AuthenticationRequest.Builder(CLIENT_ID,
                 AuthenticationResponse.Type.TOKEN,
