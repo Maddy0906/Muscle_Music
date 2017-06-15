@@ -22,60 +22,6 @@ import com.spotify.sdk.android.player.PlayerEvent;
 import com.spotify.sdk.android.player.Spotify;
 import com.spotify.sdk.android.player.SpotifyPlayer;
 
-
-//public class MainActivity extends AppCompatActivity {
-//
-//    private Button connect;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//
-//        setTitle("Sortify");
-//
-//        System.out.println("Access token: " + accessToken);
-//
-//        if (!accessToken.equals("")) {
-//            startApplication();
-//        }
-//
-//        connect = (Button) findViewById(R.id.connectToSpotify);
-//        connect.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                startAuthentication();
-//            }
-//        });
-//    }
-//
-//
-//    void startAuthentication() {
-//        Intent intent = new Intent(this, AuthenticateActivity.class);
-//        startActivityForResult(intent, 1);
-//    }
-//
-//    void startApplication() {
-//        initSpotify();
-//
-//        Intent intent = new Intent(this, MainActivity.class);
-//        startActivity(intent);
-//    }
-//
-//
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        // Check which request we're responding to
-//        if (requestCode == 1) {
-//            // Make sure the request was successful
-//            if (resultCode == RESULT_OK) {
-//                startApplication();
-//            }
-//        }
-//    }
-//}
-
-
-
 public class MainActivity extends Activity implements
         SpotifyPlayer.NotificationCallback, ConnectionStateCallback {
 
