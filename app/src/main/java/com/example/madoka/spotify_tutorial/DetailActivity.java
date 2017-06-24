@@ -35,7 +35,7 @@ public class DetailActivity extends AppCompatActivity implements
         SpotifyPlayer.NotificationCallback, ConnectionStateCallback {
 
     //my client ID
-    private static final String CLIENT_ID = "5e4e2aa628ff4601b5c620ae826cdf6c";
+    private static final String CLIENT_ID = "CLIENT_ID";
     //my redirect URI
     private static final String REDIRECT_URI = "http://mysite.com/callback/";
 
